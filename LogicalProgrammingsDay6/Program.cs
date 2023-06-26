@@ -10,25 +10,32 @@ namespace LogicalProgrammingsDay6
     {
         static void Main(string[] args)
         {
+            int number = 17;
+            bool isPrime = true;
 
-            int number = 28;
-            int sum = 0;
-
-            for (int i = 1; i < number; i++)
+            if (number < 2)
             {
-                if (number % i == 0)
-                {
-                    sum += i;
-                }
-            }
-
-            if (sum == number)
-            {
-                Console.WriteLine($"{number} is a perfect number.");
+                isPrime = false;
             }
             else
             {
-                Console.WriteLine($"{number} is not a perfect number.");
+                for (int i = 2; i <= Math.Sqrt(number); i++)
+                {
+                    if (number % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isPrime)
+            {
+                Console.WriteLine($"{number} is a prime number.");
+            }
+            else
+            {
+                Console.WriteLine($"{number} is not a prime number.");
             }
         }
 
