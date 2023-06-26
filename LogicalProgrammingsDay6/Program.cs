@@ -10,33 +10,18 @@ namespace LogicalProgrammingsDay6
     {
         static void Main(string[] args)
         {
-            int number = 17;
-            bool isPrime = true;
+            int number = 12345;
+            int reverse = 0;
 
-            if (number < 2)
+            while (number > 0)
             {
-                isPrime = false;
-            }
-            else
-            {
-                for (int i = 2; i <= Math.Sqrt(number); i++)
-                {
-                    if (number % i == 0)
-                    {
-                        isPrime = false;
-                        break;
-                    }
-                }
+                int remainder = number % 10;
+                reverse = (reverse * 10) + remainder;
+                number /= 10;
             }
 
-            if (isPrime)
-            {
-                Console.WriteLine($"{number} is a prime number.");
-            }
-            else
-            {
-                Console.WriteLine($"{number} is not a prime number.");
-            }
+            Console.WriteLine($"Reversed number: {reverse}");
+        
         }
 
     }
