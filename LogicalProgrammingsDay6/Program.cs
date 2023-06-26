@@ -11,18 +11,24 @@ namespace LogicalProgrammingsDay6
         static void Main(string[] args)
         {
 
-            int count = 10; // Number of terms to be displayed
-            int firstTerm = 0, secondTerm = 1, nextTerm;
+            int number = 28;
+            int sum = 0;
 
-            Console.WriteLine("Fibonacci Series:");
-
-            for (int i = 0; i < count; i++)
+            for (int i = 1; i < number; i++)
             {
-                Console.WriteLine(firstTerm);
+                if (number % i == 0)
+                {
+                    sum += i;
+                }
+            }
 
-                nextTerm = firstTerm + secondTerm;
-                firstTerm = secondTerm;
-                secondTerm = nextTerm;
+            if (sum == number)
+            {
+                Console.WriteLine($"{number} is a perfect number.");
+            }
+            else
+            {
+                Console.WriteLine($"{number} is not a perfect number.");
             }
         }
 
